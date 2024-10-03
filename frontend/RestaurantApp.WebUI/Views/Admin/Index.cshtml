@@ -1,16 +1,31 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
 <!DOCTYPE html>
-
 <html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Admin Layot</title>
-</head>
+@await Component.InvokeAsync("_LayoutHeaderPartialComponent")
 <body>
-    @RenderBody()
+    <div class="wrapper">
+        @await Component.InvokeAsync("_LayoutNavbarPartialComponent")
+
+        @await Component.InvokeAsync("_LayoutSidebarPartialComponent")
+
+        <div class="main-panel">
+            <div class="content">
+                <div class="container-fluid">
+                <div class="card">
+                    
+                    @RenderBody()
+
+                </div>
+                </div>
+            </div>
+            @await Component.InvokeAsync("_LayoutFooterPartialComponent")
+        </div>
+        
+    </div>
+
 </body>
+@await Component.InvokeAsync("_LayoutScriptPartialComponent")
 </html>
