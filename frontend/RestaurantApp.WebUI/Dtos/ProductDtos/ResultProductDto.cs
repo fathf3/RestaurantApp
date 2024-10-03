@@ -1,6 +1,6 @@
-﻿namespace RestaurantApp.DtoLayer.ProductDto
+﻿namespace RestaurantApp.WebUI.Dtos.ProductDtos
 {
-    public class UpdateProductDto
+    public class ResultProductDto
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -8,6 +8,6 @@
         public decimal Price { get; set; }
         public string ImageUrl { get; set; }
         public bool Status { get; set; }
-        public int CategoryId { get; set; }
+        public string CategoryName { get; set; }
     }
 }
