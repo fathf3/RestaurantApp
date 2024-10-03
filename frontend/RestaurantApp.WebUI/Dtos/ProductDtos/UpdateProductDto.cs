@@ -1,4 +1,4 @@
-﻿namespace RestaurantApp.DtoLayer.ProductDto
+﻿namespace RestaurantApp.WebUI.Dtos.ProductDtos
 {
     public class UpdateProductDto
     {

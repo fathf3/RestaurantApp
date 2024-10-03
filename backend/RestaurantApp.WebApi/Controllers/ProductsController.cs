@@ -51,7 +51,7 @@ namespace RestaurantApp.WebApi.Controllers
             _service.TAdd(map);
             return Ok("İşlem başarılı");
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteProduct(int id)
         {
             var value = _service.TGetById(id);
