@@ -6,11 +6,10 @@ namespace RestaurantApp.DataAccessLayer.Concretes
 {
     public class SignalRContext : DbContext
     {
-        public SignalRContext()
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-
+            optionsBuilder.UseSqlServer("Server=DESKTOP-PB89LUO; Database=RestaurantApp; Trusted_Connection=True;TrustServerCertificate=True");
         }
-        public SignalRContext(DbContextOptions<SignalRContext> options) : base(options) { }
 
 
         public DbSet<About> Abouts { get; set; }
@@ -23,10 +22,6 @@ namespace RestaurantApp.DataAccessLayer.Concretes
         public DbSet<SocialMedia> SocialMedias { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-        }
+       
     }
 }
