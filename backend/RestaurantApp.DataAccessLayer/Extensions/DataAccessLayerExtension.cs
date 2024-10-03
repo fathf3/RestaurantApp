@@ -19,6 +19,14 @@ namespace RestaurantApp.DataAccessLayer.Extensions
             services.AddDbContext<SignalRContext>(opt => opt.UseSqlServer(configuration.GetConnectionString("DefaultConnectionString")));
 
             services.AddScoped<IAboutDal, EfAboutDal>();
+            services.AddScoped<IBookingDal, EfBookingDal>();
+            services.AddScoped<ICategoryDal, EfCategoryDal>();
+            services.AddScoped<IContactDal, EfContactDal>();
+            services.AddScoped<IDiscountDal, EfDiscountDal>();
+            services.AddScoped<IFeatureDal, EfFeatureDal>();
+            services.AddScoped<IProductDal, EfProductDal>();
+            services.AddScoped<ISocialMediaDal, EfSocialMediaDal>();
+            services.AddScoped<ITestimonialDal, EfTestimonialDal>();
 
             return services;
         }

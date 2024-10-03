@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RestaurantApp.BusinessLayer.Abstracts;
 using RestaurantApp.DtoLayer.AboutDto;
@@ -8,32 +9,29 @@ namespace RestaurantApp.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AboutController : ControllerBase
+    public class AboutsController : ControllerBase
     {
         private readonly IAboutService _service;
+        private readonly IMapper _mapper;
 
-        public AboutController(IAboutService service)
+        public AboutsController(IAboutService service, IMapper mapper)
         {
             _service = service;
+            _mapper = mapper;
         }
         [HttpGet]
         public IActionResult AboutList()
         {
             var values = _service.TGetListAll();
-            return Ok(values);
+            return Ok(_mapper.Map<List<ResultAboutDto>>(values));
         }
 
         [HttpPost]
         public IActionResult CreateAbout(CreateAboutDto dto)
         {
-            About about = new About()
-            {
-                Description = dto.Description,
-                ImageUrl = dto.ImageUrl,
-                Title = dto.Title,
-            };
+           var map = _mapper.Map<About>(dto);
 
-            _service.TAdd(about);
+            _service.TAdd(map);
             return Ok("İşlem başarılı");
         }
         [HttpDelete]
@@ -46,14 +44,8 @@ namespace RestaurantApp.WebApi.Controllers
         [HttpPut]
         public IActionResult UpdateAbout(UpdateAboutDto dto)
         {
-            About about = new About()
-            {
-                Id = dto.Id,
-                Description = dto.Description,
-                ImageUrl = dto.ImageUrl,
-                Title = dto.Title,
-            };
-            _service.TUpdate(about);
+            var map = _mapper.Map<About>(dto);
+            _service.TUpdate(map);
             return Ok("Güncellendi");
 
         }
@@ -61,7 +53,7 @@ namespace RestaurantApp.WebApi.Controllers
         public IActionResult GetAbout(int id)
         {
             var value = _service.TGetById(id);
-            return Ok(value);
+            return Ok(_mapper.Map<GetAboutDto>(value));
         }
     }
 }
