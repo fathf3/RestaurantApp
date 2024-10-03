@@ -16,7 +16,7 @@ namespace RestaurantApp.DataAccessLayer.Extensions
     {
         public static IServiceCollection LoadDataAccessLayerExtension(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<SignalRContext>(opt => opt.UseSqlServer(configuration.GetConnectionString("DefaultConnectionString")));
+            
 
             services.AddScoped<IAboutDal, EfAboutDal>();
             services.AddScoped<IBookingDal, EfBookingDal>();

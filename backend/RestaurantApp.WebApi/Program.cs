@@ -1,10 +1,11 @@
 using RestaurantApp.BusinessLayer.Extensions;
+using RestaurantApp.DataAccessLayer.Concretes;
 using RestaurantApp.DataAccessLayer.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddDbContext<SignalRContext>();
 builder.Services.LoadBusinessLayerExtension();
 builder.Services.LoadDataAccessLayerExtension(builder.Configuration);
 

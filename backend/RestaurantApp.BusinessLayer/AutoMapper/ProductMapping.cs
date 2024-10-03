@@ -17,6 +17,7 @@ namespace RestaurantApp.BusinessLayer.AutoMapper
             CreateMap<Product, UpdateProductDto>().ReverseMap();
             CreateMap<Product, CreateProductDto>().ReverseMap();
             CreateMap<Product, GetProductDto>().ReverseMap();
+            CreateMap<Product, ResultProductWithCategoryDto>().ReverseMap();
         }
     }
 }
