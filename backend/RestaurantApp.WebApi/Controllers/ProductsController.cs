@@ -43,6 +43,9 @@ namespace RestaurantApp.WebApi.Controllers
             return Ok(values.ToList());
         }
 
+        
+        
+
         [HttpPost]
         public IActionResult CreateProduct(CreateProductDto dto)
         {
@@ -71,6 +74,16 @@ namespace RestaurantApp.WebApi.Controllers
         {
             var value = _service.TGetById(id);
             return Ok(_mapper.Map<GetProductDto>(value));
+        }
+        [HttpGet("ProductCountByCategoryNameHamburger")]
+        public IActionResult ProductCountByCategoryNameHamburger()
+        {
+            return Ok(_service.TProductCountByCategoryNameHamburger());
+        }
+        [HttpGet("GetProductCount")]
+        public IActionResult GetProductCount()
+        {
+            return Ok(_service.TGetProductCount());
         }
     }
 }

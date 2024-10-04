@@ -4,6 +4,9 @@ namespace RestaurantApp.DataAccessLayer.Abstracts
 {
     public interface IProductDal : IGenericDal<Product>
     {
-        List<Product> GetProductsWithCategory();
+        public List<Product> GetProductsWithCategory();
+        public int GetProductCount();
+        public int ProductCountByCategoryNameHamburger();
+
     }
 }

@@ -1,18 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using RestaurantApp.WebUI.Models;
-using System.Diagnostics;
 
 namespace RestaurantApp.WebUI.Controllers
 {
-    public class HomeController : Controller
+    public class SignalRDefaultController : Controller
     {
-        
-
         public IActionResult Index()
         {
             return View();
         }
-
-        
     }
 }

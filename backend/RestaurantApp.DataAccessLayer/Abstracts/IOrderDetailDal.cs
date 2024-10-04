@@ -5,10 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RestaurantApp.BusinessLayer.Abstracts
+namespace RestaurantApp.DataAccessLayer.Abstracts
 {
-    public interface IAboutService : IGenericService<About>
+    public interface IOrderDetailDal : IGenericDal<OrderDetail>
     {
     }
-
 }

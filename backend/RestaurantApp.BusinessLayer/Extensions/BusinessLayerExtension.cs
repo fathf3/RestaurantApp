@@ -26,6 +26,9 @@ namespace RestaurantApp.BusinessLayer.Extensions
             services.AddScoped<IProductService, ProductManager>();
             services.AddScoped<ISocialMediaService, SocialMediaManager>();
             services.AddScoped<ITestimonialService, TestimonialManager>();
+            services.AddScoped<IOrderService, OrderManager>();
+            services.AddScoped<IOrderDetailService, OrderDetailManager>();
+            services.AddScoped<IMenuTableService, MenuTableManager>();
             return services;
         }
     }

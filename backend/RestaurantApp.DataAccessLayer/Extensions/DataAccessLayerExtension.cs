@@ -27,6 +27,10 @@ namespace RestaurantApp.DataAccessLayer.Extensions
             services.AddScoped<IProductDal, EfProductDal>();
             services.AddScoped<ISocialMediaDal, EfSocialMediaDal>();
             services.AddScoped<ITestimonialDal, EfTestimonialDal>();
+            services.AddScoped<IOrderDal, EfOrderDal>();
+            services.AddScoped<IOrderDetailDal, EfOrderDetailDal>();
+            services.AddScoped<IMenuTableDal, EfMenuTableDal>();
+
 
             return services;
         }
