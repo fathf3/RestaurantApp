@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace RestaurantApp.BusinessLayer.Abstracts
 {
-    public interface IAboutService : IGenericService<About>
+    public interface IMenuTableService : IGenericService<MenuTable>
     {
+        int TMenuTableCount();
+        void TChangeMenuTableStatusToTrue(int id);
+        void TChangeMenuTableStatusToFalse(int id);
     }
-
 }

@@ -54,5 +54,21 @@ namespace RestaurantApp.WebApi.Controllers
             var value = _service.TGetById(id);
             return Ok(_mapper.Map<GetCategoryDto>(value));
         }
+        [HttpGet("GetCategoryCount")]
+        public IActionResult GetCategoryCount()
+        {
+            
+            return Ok(_service.TGetCategoryCount);
+        }
+        [HttpGet("ActiveCategoryCount")]
+        public IActionResult ActiveCategoryCount()
+        {
+            return Ok(_service.TActiveCategoryCount);
+        }
+        [HttpGet("PassiveCategoryCount")]
+        public IActionResult PassiveCategoryCount()
+        {
+            return Ok(_service.TPassiveCategoryCount);
+        }
     }
 }

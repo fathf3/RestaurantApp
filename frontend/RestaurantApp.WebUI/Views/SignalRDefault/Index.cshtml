@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+@section Scripts {
+    <script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <script type="text/javascript">
+                            $(document).ready(() => {
+                                var connection = new signalR
+                                    .HubConnectionBuilder()
+                                    .withUrl("https://localhost:7113/SignalRHub")
+                                    .build();
+                                $("#connectstatus").text(connection.state);
+                                connection.start().then(() => {
+                                    $("#connectstatus").text(connection.state);
+                                }).catch((err) => { console.log(err) });
+                            })
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<div class="row">
+    <div class="col-md-8 offset-2">
+        <div class="alert alert-succes">
+            Baglantı durumu : <strong id="connectstatus"></strong>
+        </div>
+    </div>
+</div>

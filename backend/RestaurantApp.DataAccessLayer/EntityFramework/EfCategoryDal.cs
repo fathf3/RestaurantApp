@@ -10,5 +10,23 @@ namespace RestaurantApp.DataAccessLayer.EntityFramework
         public EfCategoryDal(SignalRContext context) : base(context)
         {
         }
+
+        public int ActiveCategoryCount()
+        {
+            var context = new SignalRContext();
+            return context.Categories.Where(x => x.Status == true).Count();
+        }
+
+        public int GetCategoryCount()
+        {
+            var context = new SignalRContext();
+            return context.Categories.Count();
+        }
+
+        public int PassiveCategoryCount()
+        {
+            var context = new SignalRContext();
+            return context.Categories.Where(x => x.Status != true).Count();
+        }
     }
 }

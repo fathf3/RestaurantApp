@@ -38,9 +38,19 @@ namespace RestaurantApp.BusinessLayer.Concretes
             return _productDal.GetListAll();
         }
 
+        public int TGetProductCount()
+        {
+            return _productDal.GetProductCount();
+        }
+
         public List<Product> TGetProductsWithCategory()
         {
             return _productDal.GetProductsWithCategory();
+        }
+
+        public int TProductCountByCategoryNameHamburger()
+        {
+            return _productDal.ProductCountByCategoryNameHamburger();
         }
 
         public void TUpdate(Product entity)
