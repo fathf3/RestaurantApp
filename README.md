@@ -1,7 +1,9 @@
 ### <div align="center">Restoranlar için Sipariş Yönetim Projesi</div>  
   
 
-- Bu proje, restoranlar için sipariş yönetim ve QR code ile masa tanımlama sağlaması amaçlanmaktadır.  
+- Bu proje, restoranlar için sipariş yönetim ve QR code ile masa tanımlama sağlaması amaçlanmaktadır.
+- Repository pattern ve katmanlı mimari kullanıldı.
+- SignalR kütüphanesi ile anlık veri gösterimi sağlandı.
   
 
 <br/>  
