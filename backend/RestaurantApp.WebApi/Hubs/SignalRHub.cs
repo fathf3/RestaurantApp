@@ -9,13 +9,15 @@ namespace RestaurantApp.WebApi.Hubs
         private readonly IProductService _productService;
         private readonly IOrderService _orderService;
         private readonly IMenuTableService _menuTableService;
+        private readonly IBookingService _bookingService;
 
-        public SignalRHub(IProductService productService, IOrderService orderService, ICategoryService categoryService, IMenuTableService menuTableService)
+        public SignalRHub(IProductService productService, IOrderService orderService, ICategoryService categoryService, IMenuTableService menuTableService, IBookingService bookingService)
         {
             _productService = productService;
             _orderService = orderService;
             _categoryService = categoryService;
             _menuTableService = menuTableService;
+            _bookingService = bookingService;
         }
         public async Task SendStatistic()
         {
@@ -42,5 +44,15 @@ namespace RestaurantApp.WebApi.Hubs
 
 
         }
+
+
+        public async Task GetBookingList()
+        {
+            var values = _bookingService.TGetListAll();
+            await Clients.All.SendAsync("ReceiveBookingList", values);
+        }
+
+
+
     }
 }
