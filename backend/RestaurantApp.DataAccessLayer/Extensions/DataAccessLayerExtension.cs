@@ -32,6 +32,7 @@ namespace RestaurantApp.DataAccessLayer.Extensions
             services.AddScoped<IMenuTableDal, EfMenuTableDal>();
             services.AddScoped<IMoneyCaseDal, EfMoneyCaseDal>();
             services.AddScoped<ISliderDal, EfSliderDal>();
+            services.AddScoped<IBasketDal, EfBasketDal>();
 
 
             return services;

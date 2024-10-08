@@ -2,6 +2,7 @@ using RestaurantApp.BusinessLayer.Extensions;
 using RestaurantApp.DataAccessLayer.Concretes;
 using RestaurantApp.DataAccessLayer.Extensions;
 using RestaurantApp.WebApi.Hubs;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +23,10 @@ builder.Services.AddSignalR();
 builder.Services.AddDbContext<SignalRContext>();
 builder.Services.LoadBusinessLayerExtension();
 builder.Services.LoadDataAccessLayerExtension(builder.Configuration);
+
+builder.Services.AddControllersWithViews()
+    .AddJsonOptions(options => options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
