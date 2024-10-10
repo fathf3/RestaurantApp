@@ -1,13 +1,20 @@
 ### <div align="center">Restoranlar için Sipariş Yönetim Projesi</div>  
   
 
-- Bu proje, restoranlar için sipariş yönetim ve QR code ile masa tanımlama sağlaması amaçlanmaktadır.
-- Repository pattern ve katmanlı mimari kullanıldı.
-- SignalR kütüphanesi ile anlık veri gösterimi sağlandı.
+Amaç: Bu proje, restoran keşfini kolaylaştırarak ve kullanıcı etkileşimini iyileştirerek operasyonları modernize etmeyi amaçlamaktadır.
+Kullanıcı Etkileşimi: Müşteriler masalarında QR kodlarını tarayarak doğrudan sipariş verebilir ve rezervasyon yaptırabilirler. Bu rezervasyonlar yönetici panelinde anında görünür ve yöneticilere gerçek zamanlı bildirimler gönderilir. Kontrol paneli erişimi için güvenli e-posta doğrulaması uygulanır.
+Teknik Ayrıntılar: Sistem, rezervasyonlar için onay e-postaları gönderme dahil olmak üzere arka plan süreçlerini yönetmek için bir API mimarisinden yararlanır. SignalR, gerçek zamanlı güncellemeler ve alışveriş sepeti yönetimi gibi özellikler için kullanılır.
   
 
 <br/>  
+## PROJEDE KULLANILAN ARAÇLAR 🎯 
+SignalR : SignalR ile sipariş durumu, masa durumu ve bir çok istatistiği anlık olrak görebiliyoruz.
+N Katmanlı Mimari : Projenın daha yönetilebilir olmasını sağladı.
+Repository Pattern : Veri erişimi yönetmek ve bağımlılığı azaltmamızı sağladı.
+Entity Framework: Code First yaklaşımı ile veri erişimininde kolaylık sağladı.
+Restful API : : Tüm backend işlemlerini yönetmek için bir ASP.NET Core API uygulaması geliştirdik, bu bize veriye rahat ulaşmamızı sağladı.
 
+Swagger, MailKit, QRCode vb. kütaphanelerden yararlanıldı.
 
 ## PROJEDE KULLANILAN TEKNOLOJİLER 🎯 
 <table><tr><td valign="top" ">
