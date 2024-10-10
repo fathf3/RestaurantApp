@@ -11,7 +11,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.21" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.18" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\backend\RestaurantApp.DataAccessLayer\RestaurantApp.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\..\backend\RestaurantApp.DtoLayer\RestaurantApp.DtoLayer.csproj" />
+    <ProjectReference Include="..\..\backend\RestaurantApp.EntityLayer\RestaurantApp.EntityLayer.csproj" />
   </ItemGroup>
 
 </Project>
