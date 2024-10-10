@@ -8,6 +8,7 @@ Teknik Ayrıntılar: Sistem, rezervasyonlar için onay e-postaları gönderme da
 
 <br/>  
 ## PROJEDE KULLANILAN ARAÇLAR 🎯 
+<br/>
 SignalR : SignalR ile sipariş durumu, masa durumu ve bir çok istatistiği anlık olrak görebiliyoruz.
 N Katmanlı Mimari : Projenın daha yönetilebilir olmasını sağladı.
 Repository Pattern : Veri erişimi yönetmek ve bağımlılığı azaltmamızı sağladı.
