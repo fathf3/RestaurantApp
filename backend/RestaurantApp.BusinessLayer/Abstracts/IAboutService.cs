@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantApp.BusinessLayer.Abstracts
 {
-    public interface IAboutService : IGenericService<About>
+	public interface IAboutService : IGenericService<About>
     {
     }
 

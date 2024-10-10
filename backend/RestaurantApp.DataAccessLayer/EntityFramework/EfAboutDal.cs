@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantApp.DataAccessLayer.EntityFramework
 {
-    public class EfAboutDal : GenericRepository<About>, IAboutDal
+	public class EfAboutDal : GenericRepository<About>, IAboutDal
     {
         public EfAboutDal(SignalRContext context) : base(context)
         {

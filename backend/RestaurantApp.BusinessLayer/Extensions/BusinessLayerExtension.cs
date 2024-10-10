@@ -32,6 +32,7 @@ namespace RestaurantApp.BusinessLayer.Extensions
             services.AddScoped<IMoneyCaseService, MoneyCaseManager>();
             services.AddScoped<ISliderService, SliderManager>();
             services.AddScoped<IBasketService, BasketManager>();
+            services.AddScoped<INotificationService, NotificationManager>();
             
             return services;
         }
