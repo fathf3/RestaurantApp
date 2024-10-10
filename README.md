@@ -2,18 +2,19 @@
   
 
 Amaç: Bu proje, restoran keşfini kolaylaştırarak ve kullanıcı etkileşimini iyileştirerek operasyonları modernize etmeyi amaçlamaktadır.<br/>
-Kullanıcı Etkileşimi: Müşteriler masalarında QR kodlarını tarayarak doğrudan sipariş verebilir ve rezervasyon yaptırabilirler. Bu rezervasyonlar yönetici panelinde anında görünür ve yöneticilere gerçek zamanlı bildirimler gönderilir. Kontrol paneli erişimi için güvenli e-posta doğrulaması uygulanır.
+Kullanıcı Etkileşimi: Müşteriler masalarında QR kodlarını tarayarak doğrudan sipariş verebilir ve rezervasyon yaptırabilirler. Bu rezervasyonlar yönetici panelinde anında görünür ve yöneticilere gerçek zamanlı bildirimler gönderilir. <br/>
+
 Teknik Ayrıntılar: Sistem, rezervasyonlar için onay e-postaları gönderme dahil olmak üzere arka plan süreçlerini yönetmek için bir API mimarisinden yararlanır. SignalR, gerçek zamanlı güncellemeler ve alışveriş sepeti yönetimi gibi özellikler için kullanılır.
   
 
 <br/>  
 ## PROJEDE KULLANILAN ARAÇLAR 🎯 
 <br/>
-SignalR : SignalR ile sipariş durumu, masa durumu ve bir çok istatistiği anlık olrak görebiliyoruz.
-N Katmanlı Mimari : Projenın daha yönetilebilir olmasını sağladı.
-Repository Pattern : Veri erişimi yönetmek ve bağımlılığı azaltmamızı sağladı.
-Entity Framework: Code First yaklaşımı ile veri erişimininde kolaylık sağladı.
-Restful API : : Tüm backend işlemlerini yönetmek için bir ASP.NET Core API uygulaması geliştirdik, bu bize veriye rahat ulaşmamızı sağladı.
+SignalR : SignalR ile sipariş durumu, masa durumu ve bir çok istatistiği anlık olrak görebiliyoruz.<br/>
+N Katmanlı Mimari : Projenın daha yönetilebilir olmasını sağladı.<br/>
+Repository Pattern : Veri erişimi yönetmek ve bağımlılığı azaltmamızı sağladı.<br/>
+Entity Framework: Code First yaklaşımı ile veri erişimininde kolaylık sağladı.<br/>
+Restful API : : Tüm backend işlemlerini yönetmek için bir ASP.NET Core API uygulaması geliştirdik, bu bize veriye rahat ulaşmamızı sağladı.<br/>
 
 Swagger, MailKit, QRCode vb. kütaphanelerden yararlanıldı.
 
