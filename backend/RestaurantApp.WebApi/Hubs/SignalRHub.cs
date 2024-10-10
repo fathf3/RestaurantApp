@@ -62,6 +62,10 @@ namespace RestaurantApp.WebApi.Hubs
             var values = _notificationService.GetAllNotificationsByFalse();
             await Clients.All.SendAsync("ReceiveGetAllNotificationsByFalse", values);
         }
-
+        public async Task GetMenuTableStatus()
+        {
+            var values = _menuTableService.TGetListAll();
+            await Clients.All.SendAsync("ReceiveMenuTableStatus", values);
+        }
     }
 }
