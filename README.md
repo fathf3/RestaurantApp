@@ -35,4 +35,6 @@ Swagger, MailKit, QRCode vb. kütaphanelerden yararlanıldı.
 <div align="center">  
 
 <a><img style="margin: 10px" src="https://i.hizliresim.com/61yu4ko.png" /></a>  
+<a><img style="margin: 10px" src="https://i.hizliresim.com/e3g621o.png" /></a>  
+<a><img style="margin: 10px" src="https://i.hizliresim.com/ahiis4d.png" /></a>  
 </div>
