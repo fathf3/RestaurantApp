@@ -1,11 +1,13 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using RestaurantApp.DtoLayer.IdentitiyDto;
 using RestaurantApp.EntityLayer.Entities;
 
 namespace RestaurantApp.WebUI.Controllers
 {
-	public class RegisterController : Controller
+    [Authorize]
+    public class RegisterController : Controller
 	{
 		private readonly UserManager<AppUser> _userManager;
 

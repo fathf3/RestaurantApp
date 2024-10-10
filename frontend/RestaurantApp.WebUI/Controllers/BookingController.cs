@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using RestaurantApp.WebUI.Dtos.BookingDtos;
 using System.Text;
 
 namespace RestaurantApp.WebUI.Controllers
 {
+    [Authorize]
     public class BookingController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
@@ -83,6 +85,19 @@ namespace RestaurantApp.WebUI.Controllers
             return View();
         }
 
+		public async Task<IActionResult> BookingStatusApproved(int id)
+		{
+			var client = _httpClientFactory.CreateClient();
+			await client.GetAsync($"https://localhost:7113/api/Bookings/BookingStatusApproved/{id}");
+			return Redirect("/Booking/Index/");
+		}
 
-    }
+		public async Task<IActionResult> BookingStatusCancelled(int id)
+		{
+			var client = _httpClientFactory.CreateClient();
+			await client.GetAsync($"https://localhost:7113/api/Bookings/BookingStatusCancelled/{id}");
+			return Redirect("/Booking/Index/");
+		}
+
+	}
 }

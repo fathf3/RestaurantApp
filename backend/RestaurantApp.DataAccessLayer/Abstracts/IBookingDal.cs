@@ -9,5 +9,7 @@ namespace RestaurantApp.DataAccessLayer.Abstracts
 {
     public interface IBookingDal : IGenericDal<Booking>
     {
+        void BookingStatusApproved(int id);
+        void BookingStatusCancelled(int id);
     }
 }

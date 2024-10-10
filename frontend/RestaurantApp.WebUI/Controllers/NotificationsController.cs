@@ -1,11 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using RestaurantApp.WebUI.Dtos.NatificationDtos;
 using System.Text;
 
 namespace RestaurantApp.WebUI.Controllers
 {
-	public class NotificationsController : Controller
+    [Authorize]
+    public class NotificationsController : Controller
 	{
 		private readonly IHttpClientFactory _httpClientFactory;
 

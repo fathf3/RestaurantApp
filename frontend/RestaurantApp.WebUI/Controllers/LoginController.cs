@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using RestaurantApp.EntityLayer.Entities;
 using RestaurantApp.WebUI.Dtos.IdentityDtos;
 
 namespace RestaurantApp.WebUI.Controllers
 {
+	[AllowAnonymous]
 	public class LoginController : Controller
 	{
 		private readonly SignInManager<AppUser> _signInManager;
@@ -29,5 +31,12 @@ namespace RestaurantApp.WebUI.Controllers
 			}
 			return View();
 		}
+
+		public async Task<IActionResult> LogOut()
+		{
+			await _signInManager.SignOutAsync();
+			return Redirect("/Login/Index");
+		}
+
 	}
 }

@@ -54,5 +54,18 @@ namespace RestaurantApp.WebApi.Controllers
             var value = _service.TGetById(id);
             return Ok(_mapper.Map<GetBookingDto>(value));
         }
-    }
+		[HttpGet("BookingStatusApproved/{id}")]
+		public IActionResult BookingStatusApproved(int id)
+		{
+			_service.BookingStatusApproved(id);
+			return Ok(id + " : rezervasyon onaylandı.");
+		}
+		[HttpGet("BookingStatusCancelled/{id}")]
+		public IActionResult BookingStatusCancelled(int id)
+		{
+			_service.BookingStatusCancelled(id);
+			return Ok(id+ " : rezervasyon iptal edildi.");
+		}
+
+	}
 }

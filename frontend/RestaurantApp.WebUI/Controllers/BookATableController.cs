@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RestaurantApp.WebUI.Dtos.BasketDtos;
@@ -8,6 +9,7 @@ using System.Text;
 
 namespace RestaurantApp.WebUI.Controllers
 {
+    [AllowAnonymous]
     public class BookATableController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
