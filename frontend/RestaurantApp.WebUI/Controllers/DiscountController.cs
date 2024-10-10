@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using RestaurantApp.WebUI.Dtos.DiscountDtos;
 using System.Text;
 
 namespace RestaurantApp.WebUI.Controllers
 {
+    [Authorize]
     public class DiscountController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;

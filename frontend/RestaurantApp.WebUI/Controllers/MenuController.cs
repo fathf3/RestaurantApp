@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using RestaurantApp.WebUI.Dtos.BasketDtos;
 using RestaurantApp.WebUI.Dtos.ProductDtos;
@@ -6,6 +7,7 @@ using System.Text;
 
 namespace RestaurantApp.WebUI.Controllers
 {
+    [AllowAnonymous]
     public class MenuController : Controller
     {
 

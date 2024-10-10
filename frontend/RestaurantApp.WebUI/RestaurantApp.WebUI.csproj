@@ -13,12 +13,20 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.21" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.18" />
+    <PackageReference Include="NETCore.MailKit" Version="2.1.0" />
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\backend\RestaurantApp.DataAccessLayer\RestaurantApp.DataAccessLayer.csproj" />
     <ProjectReference Include="..\..\backend\RestaurantApp.DtoLayer\RestaurantApp.DtoLayer.csproj" />
     <ProjectReference Include="..\..\backend\RestaurantApp.EntityLayer\RestaurantApp.EntityLayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="QRCoder">
+      <HintPath>C:\Users\F3\Downloads\QRCoder.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
