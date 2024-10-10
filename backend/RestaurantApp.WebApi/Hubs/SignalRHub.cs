@@ -10,16 +10,18 @@ namespace RestaurantApp.WebApi.Hubs
         private readonly IOrderService _orderService;
         private readonly IMenuTableService _menuTableService;
         private readonly IBookingService _bookingService;
+        private readonly INotificationService _notificationService;
 
-        public SignalRHub(IProductService productService, IOrderService orderService, ICategoryService categoryService, IMenuTableService menuTableService, IBookingService bookingService)
-        {
-            _productService = productService;
-            _orderService = orderService;
-            _categoryService = categoryService;
-            _menuTableService = menuTableService;
-            _bookingService = bookingService;
-        }
-        public async Task SendStatistic()
+		public SignalRHub(IProductService productService, IOrderService orderService, ICategoryService categoryService, IMenuTableService menuTableService, IBookingService bookingService, INotificationService notificationService)
+		{
+			_productService = productService;
+			_orderService = orderService;
+			_categoryService = categoryService;
+			_menuTableService = menuTableService;
+			_bookingService = bookingService;
+			_notificationService = notificationService;
+		}
+		public async Task SendStatistic()
         {
             var value = _categoryService.TGetCategoryCount();
             await Clients.All.SendAsync("ReceiveCategoryCount", value);
@@ -52,7 +54,14 @@ namespace RestaurantApp.WebApi.Hubs
             await Clients.All.SendAsync("ReceiveBookingList", values);
         }
 
+        public async Task SendNotification()
+        {
+            var value = _notificationService.NotificationCountByStatusFalse();
+            await Clients.All.SendAsync("ReceiveNotificationCountByFalse", value);
 
+            var values = _notificationService.GetAllNotificationsByFalse();
+            await Clients.All.SendAsync("ReceiveGetAllNotificationsByFalse", values);
+        }
 
     }
 }
