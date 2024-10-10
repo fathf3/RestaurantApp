@@ -1,5 +1,6 @@
 ﻿namespace RestaurantApp.WebUI.Dtos.NatificationDtos
 {
+
 	public class UpdateNotificationDto
 	{
 		public int Id { get; set; }

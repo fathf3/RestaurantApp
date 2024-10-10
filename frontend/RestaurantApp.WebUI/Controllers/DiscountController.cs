@@ -41,7 +41,7 @@ namespace RestaurantApp.WebUI.Controllers
             var response = await client.PostAsync("https://localhost:7113/api/Discounts", stringContent);
             if (response.IsSuccessStatusCode)
             {
-                return RedirectToAction("Index");
+                return Redirect("/Discount/Index");
             }
             return View();
         }
@@ -51,7 +51,7 @@ namespace RestaurantApp.WebUI.Controllers
             var response = await client.DeleteAsync($"https://localhost:7113/api/Discounts/{id}");
             if (response.IsSuccessStatusCode)
             {
-                return RedirectToAction("Index");
+                return Redirect("/Discount/Index");
             }
             return View();
         }
@@ -79,7 +79,7 @@ namespace RestaurantApp.WebUI.Controllers
             var response = await client.PutAsync("https://localhost:7113/api/Discounts/", stringContent);
             if (response.IsSuccessStatusCode)
             {
-                return RedirectToAction("Index");
+                return Redirect("/Discount/Index");
             }
             return View();
         }

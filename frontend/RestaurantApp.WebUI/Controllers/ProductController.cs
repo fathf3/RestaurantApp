@@ -55,7 +55,7 @@ namespace RestaurantApp.WebUI.Controllers
             var response = await client.PostAsync("https://localhost:7113/api/Products", stringContent);
             if (response.IsSuccessStatusCode)
             {
-                return RedirectToAction("Index");
+                return Redirect("/Product/Index");
             }
             return View();
         }
@@ -65,7 +65,7 @@ namespace RestaurantApp.WebUI.Controllers
             var response = await client.DeleteAsync($"https://localhost:7113/api/Products/{id}");
             if (response.IsSuccessStatusCode)
             {
-                return RedirectToAction("Index");
+                return Redirect("/Product/Index");
             }
             return View();
         }
@@ -106,7 +106,7 @@ namespace RestaurantApp.WebUI.Controllers
             var response = await client.PutAsync("https://localhost:7113/api/Products/", stringContent);
             if (response.IsSuccessStatusCode)
             {
-                return RedirectToAction("Index");
+                return Redirect("/Product/Index");
             }
             return View();
         }

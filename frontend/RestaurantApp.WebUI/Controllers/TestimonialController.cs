@@ -41,7 +41,7 @@ namespace RestaurantApp.WebUI.Controllers
             var response = await client.PostAsync("https://localhost:7113/api/Testimonials", stringContent);
             if (response.IsSuccessStatusCode)
             {
-                return RedirectToAction("Index");
+                return Redirect("/Testimonial/Index");
             }
             return View();
         }
@@ -51,7 +51,7 @@ namespace RestaurantApp.WebUI.Controllers
             var response = await client.DeleteAsync($"https://localhost:7113/api/Testimonials/{id}");
             if (response.IsSuccessStatusCode)
             {
-                return RedirectToAction("Index");
+                return Redirect("/Testimonial/Index");
             }
             return View();
         }
@@ -78,7 +78,7 @@ namespace RestaurantApp.WebUI.Controllers
             var response = await client.PutAsync("https://localhost:7113/api/Testimonials/", stringContent);
             if (response.IsSuccessStatusCode)
             {
-                return RedirectToAction("Index");
+                return Redirect("/Testimonial/Index");
             }
             return View();
         }

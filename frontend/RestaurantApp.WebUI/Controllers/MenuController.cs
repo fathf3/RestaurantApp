@@ -36,7 +36,7 @@ namespace RestaurantApp.WebUI.Controllers
             var response = await client.PostAsync("https://localhost:7113/api/Basket", stringContent);
             if (response.IsSuccessStatusCode)
             {
-                return RedirectToAction("Index");
+                return Redirect("/Menu/Index");
             }
             return Json(createBasketDto);
         }
