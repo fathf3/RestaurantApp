@@ -85,5 +85,10 @@ namespace RestaurantApp.WebApi.Controllers
         {
             return Ok(_service.TGetProductCount());
         }
+        [HttpGet("GetLast9Product")]
+        public IActionResult GetLast9Product()
+        {
+            return Ok(_service.GetLast9Product());
+        }
     }
 }

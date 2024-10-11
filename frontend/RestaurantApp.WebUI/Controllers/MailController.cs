@@ -18,7 +18,7 @@ namespace RestaurantApp.WebUI.Controllers
         {
             MimeMessage mineMessage = new MimeMessage();
 
-            MailboxAddress mailboxAddressFrom = new MailboxAddress("Restoran", "fatihmutlu348@gmail.com");
+            MailboxAddress mailboxAddressFrom = new MailboxAddress("Restoran", "mail adres");
             mineMessage.From.Add(mailboxAddressFrom);
 
             MailboxAddress mailboxAddressTo = new MailboxAddress("User", createMailDto.ReceiverMail);
@@ -32,7 +32,7 @@ namespace RestaurantApp.WebUI.Controllers
 
             SmtpClient client = new SmtpClient();
             client.Connect("smtp.gmail.com", 587, false);
-            client.Authenticate("fatihmutlu348@gmail.com", "onhw ccsl ixkg zkbd");
+            client.Authenticate("mail adres", "kod");
             
             client.Send(mineMessage);
             client.Disconnect(true);
