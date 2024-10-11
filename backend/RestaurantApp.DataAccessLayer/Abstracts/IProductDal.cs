@@ -7,6 +7,7 @@ namespace RestaurantApp.DataAccessLayer.Abstracts
         public List<Product> GetProductsWithCategory();
         public int GetProductCount();
         public int ProductCountByCategoryNameHamburger();
+        List<Product> GetLast9Product();
 
     }
 }

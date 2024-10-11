@@ -6,7 +6,9 @@ namespace RestaurantApp.BusinessLayer.Abstracts
     {
         List<Product> TGetProductsWithCategory();
         int TGetProductCount();
+
         int TProductCountByCategoryNameHamburger();
+        List<Product> GetLast9Product();
     }
     
 }

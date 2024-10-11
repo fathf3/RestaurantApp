@@ -18,6 +18,11 @@ namespace RestaurantApp.BusinessLayer.Concretes
             _productDal = productDal;
         }
 
+        public List<Product> GetLast9Product()
+        {
+            return _productDal.GetLast9Product();
+        }
+
         public void TAdd(Product entity)
         {
             _productDal.Add(entity);
