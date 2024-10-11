@@ -16,7 +16,7 @@ namespace RestaurantApp.WebUI.Controllers
                 RequestUri = new Uri("https://tasty.p.rapidapi.com/recipes/list?from=0&size=40&tags=under_30_minutes"),
                 Headers =
     {
-        { "x-rapidapi-key", "a2c2e36cccmshf525ca733a1354cp1a4bdajsn5d634bcb1845" },
+        { "x-rapidapi-key", "key" },
         { "x-rapidapi-host", "tasty.p.rapidapi.com" },
     },
             };
