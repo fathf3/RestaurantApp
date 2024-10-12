@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using RestaurantApp.BusinessLayer.Abstracts;
 using RestaurantApp.DtoLayer.BookingDto;
@@ -12,11 +13,13 @@ namespace RestaurantApp.WebApi.Controllers
     {
         private readonly IBookingService _service;
         private readonly IMapper _mapper;
+        private readonly IValidator<CreateBookingDto> _validator;
 
-        public BookingsController(IBookingService service, IMapper mapper)
+        public BookingsController(IBookingService service, IMapper mapper, IValidator<CreateBookingDto> validator)
         {
             _service = service;
             _mapper = mapper;
+            _validator = validator;
         }
         [HttpGet]
         public IActionResult BookingList()
@@ -28,6 +31,13 @@ namespace RestaurantApp.WebApi.Controllers
         [HttpPost]
         public IActionResult CreateBooking(CreateBookingDto dto)
         {
+
+            var validationResult = _validator.Validate(dto);
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(validationResult.Errors);
+            }
+
             var map = _mapper.Map<Booking>(dto);
 
             _service.TAdd(map);

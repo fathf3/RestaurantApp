@@ -1,8 +1,12 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using FluentValidation;
+using FluentValidation.AspNetCore;
+using Microsoft.Extensions.DependencyInjection;
 using RestaurantApp.BusinessLayer.Abstracts;
 using RestaurantApp.BusinessLayer.Concretes;
+using RestaurantApp.BusinessLayer.ValidationRules.BookingValidations;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -33,6 +37,13 @@ namespace RestaurantApp.BusinessLayer.Extensions
             services.AddScoped<ISliderService, SliderManager>();
             services.AddScoped<IBasketService, BasketManager>();
             services.AddScoped<INotificationService, NotificationManager>();
+
+            services.AddFluentValidation(opt =>
+            {
+                opt.RegisterValidatorsFromAssemblyContaining<CreateBookingValidation>();
+                opt.DisableDataAnnotationsValidation = true;
+                opt.ValidatorOptions.LanguageManager.Culture = new CultureInfo("tr");
+            });
             
             return services;
         }
