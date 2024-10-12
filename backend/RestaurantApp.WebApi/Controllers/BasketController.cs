@@ -50,14 +50,14 @@ namespace RestaurantApp.WebApi.Controllers
             using var context = new SignalRContext();
             _basketService.TAdd(new EntityLayer.Entities.Basket()
             {
-                ProductID = createBasketDto.ProductID,
-                Count = 1,
-                MenuTableID = 1,
-                Price = context.Products
+				ProductID = createBasketDto.ProductID,
+				MenuTableID = createBasketDto.MenuTableID,
+				Count = 1,
+				Price = context.Products
                 .Where(x => x.Id == createBasketDto.ProductID)
                 .Select(y => y.Price).FirstOrDefault(),
-                TotalPrice = 0
-            });
+                TotalPrice = createBasketDto.TotalPrice,
+			});
             return Ok();
         }
         [HttpDelete("{id}")]

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using RestaurantApp.EntityLayer.Entities;
 using RestaurantApp.WebUI.Dtos.BasketDtos;
 using RestaurantApp.WebUI.Dtos.ProductDtos;
 using System.Text;
@@ -16,9 +17,9 @@ namespace RestaurantApp.WebUI.Controllers
         {
             _httpClientFactory = httpClientFactory;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int id)
         {
-            //ViewBag.v = id; // Burada MenuTableId değerini ayarlıyoruz
+            ViewBag.v = id; // Burada MenuTableId değerini ayarlıyoruz
                             // TempData["x"] = id; // Eğer bunu kullanıyorsanız
 
             var client = _httpClientFactory.CreateClient();
@@ -28,10 +29,21 @@ namespace RestaurantApp.WebUI.Controllers
             return View(values);
         }
         [HttpPost]
-        public async Task<IActionResult> AddBasket(int id)
+        public async Task<IActionResult> AddBasket(int id, int menuTableId)
         {
-            CreateBasketDto createBasketDto = new CreateBasketDto();
-            createBasketDto.ProductId = id;
+            if (menuTableId == 0)
+            {
+                return BadRequest("MenuTableId 0 geliyor.");
+            }
+
+            CreateBasketDto createBasketDto = new CreateBasketDto
+            {
+                ProductId = id,
+                MenuTableID = menuTableId // Gelen MenuTableID burada kullanılıyor
+                
+                
+            };
+
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createBasketDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
