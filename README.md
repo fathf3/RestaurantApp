@@ -1,7 +1,7 @@
 ### <div align="center">Restoranlar için Sipariş Yönetim Projesi</div>  
   
 
-Amaç: Bu proje, restoran keşfini kolaylaştırarak ve kullanıcı etkileşimini iyileştirerek operasyonları modernize etmeyi amaçlamaktadır.<br/>
+Amaç: Bu proje, restoran sipariş yönetimini kolaylaştırarak ve kullanıcı etkileşimini iyileştirerek operasyonları modernize etmeyi amaçlamaktadır.<br/>
 Kullanıcı Etkileşimi: Müşteriler masalarında QR kodlarını tarayarak doğrudan sipariş verebilir ve rezervasyon yaptırabilirler. Bu rezervasyonlar yönetici panelinde anında görünür ve yöneticilere gerçek zamanlı bildirimler gönderilir. <br/>
 
 Teknik Ayrıntılar: Sistem, rezervasyonlar için onay e-postaları gönderme dahil olmak üzere arka plan süreçlerini yönetmek için bir API mimarisinden yararlanır. SignalR, gerçek zamanlı güncellemeler ve alışveriş sepeti yönetimi gibi özellikler için kullanılır.
